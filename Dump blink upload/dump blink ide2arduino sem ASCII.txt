@@ -1,0 +1,226 @@
+30 20 											comando '0' + '20'
+30 20                                      		comando '0' + '20'
+30 20 											comando '0' + '20'
+41 81 20										comando 'A' + 1 hexa de parametro -> '81' (verific. "software minor version") + '20'
+41 82 20 										comando 'A' + 1 hexa de parametro -> '82' (verific. "software major version") + '20'
+42 86 00 00 01 01 01 01 03 ff ff ff ff 00 80 04 00 00 00 80 00 20		comando 'B' + 20 hexas de parametro (Parametros do dispositivo, DONT CARE) + '20'
+45 05 04 d7 c2 00 20							comando 'E' + 5 hexas de parametro (Coisas para programação em paralelo, DONT CARE) + '20'
+50 20 											comando 'P' + '20' (Entra em modo de programação, DONT CARE)
+75 20 											comando 'u' + '20' (Obtem bytes de assinatura do dispositivo)
+55 00 00 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64 												comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+0c 94 5c 00 0c 94 6e 00 0c 94 6e 00 0c 94 6e 00 	
+0c 94 6e 00 0c 94 6e 00 0c 94 6e 00 0c 94 6e 00 
+0c 94 6e 00 0c 94 6e 00 0c 94 6e 00 0c 94 6e 00
+0c 94 6e 00 0c 94 6e 00 0c 94 6e 00 0c 94 6e 00		128 hexas (Dados que serão escritos na memória) +
+0c 94 15 01 0c 94 6e 00 0c 94 6e 00 0c 94 6e 00		(LINHAS 1-8 DO CÓDIGO DO BLINK)
+0c 94 6e 00 0c 94 6e 00 0c 94 6e 00 0c 94 6e 00
+0c 94 6e 00 0c 94 6e 00 00 00 00 00 24 00 27 00
+2a 00 00 00 00 00 25 00 28 00 2b 00 04 04 04 04 
+20 											  		'20' (caracter definindo o final do comando 'd')
+55 40 00 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64 												comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+04 04 04 04 02 02 02 02 02 02 03 03 03 03 03 03 
+01 02 04 08 10 20 40 80 01 02 04 08 10 20 01 02
+04 08 10 20 00 00 00 08 00 02 01 00 00 03 04 07 
+00 00 00 00 00 00 00 00 11 24 1f be cf ef d8 e0 
+de bf cd bf 21 e0 a0 e0 b1 e0 01 c0 1d 92 a9 30 	128 hexas (Dados que serão escritos na memória) +
+b2 07 e1 f7 0e 94 5f 01 0c 94 ce 01 0c 94 00 00 	(LINHAS 9-16 DO CÓDIGO DO BLINK)
+e1 eb f0 e0 24 91 ed e9 f0 e0 94 91 e9 e8 f0 e0 
+e4 91 ee 23 09 f4 3b c0 22 23 39 f1 23 30 91 f0 
+20 													'20' (caracter definindo o final do comando 'd')
+55 80 00 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64  											comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+38 f4 21 30 a9 f0 22 30 01 f5 24 b5 2f 7d 12 c0 
+27 30 91 f0 28 30 a1 f0 24 30 b9 f4 20 91 80 00 
+2f 7d 03 c0 20 91 80 00 2f 77 20 93 80 00 0d c0 
+24 b5 2f 77 24 bd 09 c0 20 91 b0 00 2f 77 03 c0 	128 hexas (Dados que serão escritos na memória) +
+20 91 b0 00 2f 7d 20 93 b0 00 f0 e0 ee 0f ff 1f 	(LINHAS 17-24 DO CÓDIGO DO BLINK)
+ee 58 ff 4f a5 91 b4 91 2f b7 f8 94 ec 91 81 11 
+03 c0 90 95 9e 23 01 c0 9e 2b 9c 93 2f bf 08 95 
+3f b7 f8 94 80 91 05 01 90 91 06 01 a0 91 07 01 
+20 													'20' (caracter definindo o final do comando 'd')
+55 c0 00 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64 												comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+b0 91 08 01 26 b5 a8 9b 05 c0 2f 3f 19 f0 01 96 
+a1 1d b1 1d 3f bf ba 2f a9 2f 98 2f 88 27 82 0f 
+91 1d a1 1d b1 1d bc 01 cd 01 42 e0 66 0f 77 1f 
+88 1f 99 1f 4a 95 d1 f7 08 95 8f 92 9f 92 af 92 	128 hexas (Dados que serão escritos na memória) +
+bf 92 cf 92 df 92 ef 92 ff 92 0e 94 b8 00 4b 01 	(LINHAS 25-32 DO CÓDIGO DO BLINK)
+5c 01 88 ee c8 2e 83 e0 d8 2e e1 2c f1 2c 0e 94 
+b8 00 dc 01 cb 01 88 19 99 09 aa 09 bb 09 88 3e 
+93 40 a1 05 b1 05 58 f0 21 e0 c2 1a d1 08 e1 08 
+20 													'20' (caracter definindo o final do comando 'd')
+55 00 01 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64 												comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+f1 08 88 ee 88 0e 83 e0 98 1e a1 1c b1 1c c1 14 
+d1 04 e1 04 f1 04 19 f7 ff 90 ef 90 df 90 cf 90 
+bf 90 af 90 9f 90 8f 90 08 95 1f 92 0f 92 0f b6 
+0f 92 11 24 2f 93 3f 93 8f 93 9f 93 af 93 bf 93 	128 hexas (Dados que serão escritos na memória) +
+80 91 01 01 90 91 02 01 a0 91 03 01 b0 91 04 01 	(LINHAS 33-40 DO CÓDIGO DO BLINK)
+30 91 00 01 23 e0 23 0f 2d 37 20 f4 01 96 a1 1d 
+b1 1d 05 c0 26 e8 23 0f 02 96 a1 1d b1 1d 20 93 
+00 01 80 93 01 01 90 93 02 01 a0 93 03 01 b0 93 
+20 													'20' (caracter definindo o final do comando 'd')
+55 40 01 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64 												comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+04 01 80 91 05 01 90 91 06 01 a0 91 07 01 b0 91 
+08 01 01 96 a1 1d b1 1d 80 93 05 01 90 93 06 01 
+a0 93 07 01 b0 93 08 01 bf 91 af 91 9f 91 8f 91 
+3f 91 2f 91 0f 90 0f be 0f 90 1f 90 18 95 78 94 	128 hexas (Dados que serão escritos na memória) +
+84 b5 82 60 84 bd 84 b5 81 60 84 bd 85 b5 82 60 	(LINHAS 41-48 DO CÓDIGO DO BLINK)
+85 bd 85 b5 81 60 85 bd 80 91 6e 00 81 60 80 93 
+6e 00 10 92 81 00 80 91 81 00 82 60 80 93 81 00 
+80 91 81 00 81 60 80 93 81 00 80 91 80 00 81 60 
+20 													'20' (caracter definindo o final do comando 'd')
+55 80 01 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64 												comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+80 93 80 00 80 91 b1 00 84 60 80 93 b1 00 80 91 
+b0 00 81 60 80 93 b0 00 80 91 7a 00 84 60 80 93 
+7a 00 80 91 7a 00 82 60 80 93 7a 00 80 91 7a 00 
+81 60 80 93 7a 00 80 91 7a 00 80 68 80 93 7a 00 	128 hexas (Dados que serão escritos na memória) +
+10 92 c1 00 ed e9 f0 e0 24 91 e9 e8 f0 e0 84 91 	(LINHAS 49-56 DO CÓDIGO DO BLINK)
+88 23 99 f0 90 e0 88 0f 99 1f fc 01 e8 59 ff 4f 
+a5 91 b4 91 fc 01 ee 58 ff 4f 85 91 94 91 8f b7 
+f8 94 ec 91 e2 2b ec 93 8f bf c0 e0 d0 e0 81 e0 
+20 													'20' (caracter definindo o final do comando 'd')
+55 c0 01 20										comando 'U' + 2 hexas de parametro (Definição do endereço em que serão escritos os próximos dados ["little endian??"]) + '20'
+64 												comando 'd' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> escrita na EEPROM , 'F' -> escrita na FLASH) +
+0e 94 70 00 0e 94 dd 00 80 e0 0e 94 70 00 0e 94  
+dd 00 20 97 a1 f3 0e 94 00 00 f1 cf f8 94 ff cf  
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  	128 hexas (Dados que serão escritos na memória) +
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  	(LINHAS 57-64 DO CÓDIGO DO BLINK)
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  	
+20 													'20' (caracter definindo o final do comando 'd')
+55 00 00 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20													'20' (caracter definindo o final do comando 't')	
+
+
+
+
+
+
+
+
+
+55 40 00 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'	
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20 													'20' (caracter definindo o final do comando 't')
+
+
+
+
+
+
+
+
+
+55 80 00 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'	
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20 													'20' (caracter definindo o final do comando 't')
+
+
+
+
+
+
+
+
+
+55 c0 00 20  									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'	
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20 													'20' (caracter definindo o final do comando 't')
+
+
+
+
+
+
+
+
+
+55 00 01 20										comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20 													'20' (caracter definindo o final do comando 't')
+
+
+
+
+
+
+
+
+
+55 40 01 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20 													'20' (caracter definindo o final do comando 't')
+
+
+
+
+
+
+
+
+
+55 80 01 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20  												'20' (caracter definindo o final do comando 't')
+
+
+
+
+
+
+
+
+
+55 c0 01 20 									comando 'U' + 2 hexas de parametro (Definição do endereço em que serão lidos os próximos dados) + '20'
+74 												comando 't' + parametros ->
+00 80 												2 hexas (Tamanho do buffer) +
+46 													1 hexa (comparador : 'E' -> leitura da EEPROM , 'F' -> leitura da FLASH) +
+20 													'20' (caracter definindo o final do comando 't')
+
+
+
+
+
+
+
+
+
+51 20                 							comando 'Q' + '20' (Sair do modo de programação)
