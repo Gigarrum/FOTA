@@ -1,7 +1,7 @@
 # FOTA
-Projeto de iniciação científica - upload de firmware over the air (FOTA)
+Projeto de iniciação científica - upload de firmware over the air (FOTA) 2016 - 2018
 
-Abstract
+Resumo
 
-A atualização remota de firmware é uma das funcionalidades mais importantes em uma rede sensor sem fio (RSSF) dado que muitos nós sensores encontram-se em locais remotos e de difícil acesso. Atualmente a atualização de firmware da plataforma Radiuino é realizada via conexão local similar a do Arduino. Esse artigo apresenta uma proposta de implantação da funcionalidade de atualização remota de firmware over the air (FOTA) para a plataforma Radiuino. Com os estudos realizados nesse projeto foi possível a definição de todas as tecnologias de hardware e software necessárias para tornar possível a programação FOTA dos nós sensores de uma RSSF.
+A atualização remota de firmware é uma das funcionalidades mais importantes em uma rede sensor sem fio (RSSF) dado que muitos nós sensores encontram-se em locais remotos e de difícil acesso. Atualmente a atualização de firmware de muitos nós sensores ainda é realizada via conexão local. Esse artigo apresenta uma proposta de implantação da funcionalidade de atualização remota, denominada firmware over the air (FOTA), sob uma RSSF. Como benefícios dessa pesquisa será uma arquitetura de implantação que permita a programação remota de um nó sensor, um protocolo para permitir a comunicação entre os dispositivos dessa arquitetura e todas as aplicações necessárias para colocar em prática essa arquitetura.
 
